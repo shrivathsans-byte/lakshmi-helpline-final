@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lakshmi One-Pager</title>
+<meta name="description" content="Lakshmi: a free phone helpline that tells older people in Tamil Nadu which government schemes they can get.">
+<style>html,body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: a single printed-brief column in five labelled parts; the solution's call strip is the one bold element */
+:root {
+  --bg: #f6f7f9;
+  --paper: #ffffff;
+  --ink: #17202b;
+  --muted: #5a6573;
+  --rule: #dfe3e8;
+  --accent: #0b6e5a;
+  --accent-soft: #e3f1ed;
+  --warn: #8a5a00;
+  --warn-soft: #fbf1dc;
+  --font-body: Calibri, "Carlito", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141a; --paper: #161d25; --ink: #e8edf2; --muted: #9aa6b4; --rule: #2a3440;
+    --accent: #4cc3a6; --accent-soft: #15302a; --warn: #e9b45a; --warn-soft: #33270f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141a; --paper: #161d25; --ink: #e8edf2; --muted: #9aa6b4; --rule: #2a3440;
+  --accent: #4cc3a6; --accent-soft: #15302a; --warn: #e9b45a; --warn-soft: #33270f;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 48px;
+}
+.sheet {
+  max-width: 860px; margin: 0 auto; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: clamp(20px, 5vw, 48px);
+  display: flex; flex-direction: column; gap: 34px;
+}
+header { display: flex; flex-direction: column; gap: 6px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+h1 { font-size: clamp(30px, 5vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; max-width: 64ch; }
+.part { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.part-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.part-head .k { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .08em; }
+.part-head h2 { font-size: 22px; margin: 0; }
+h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
+p { margin: 0; max-width: 70ch; }
+.lead { font-size: 19px; }
+.lead strong { color: var(--accent); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.stat { background: var(--paper); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 15px; }
+.stat.flag b { color: var(--warn); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.two > * { min-width: 0; }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.ex { color: var(--muted); font-style: italic; margin-top: 8px; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 16px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+td.num { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.risk { display: inline-block; font-size: 13px; font-weight: 700; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.risk.high { background: var(--warn-soft); color: var(--warn); }
+.risk.med { background: var(--accent-soft); color: var(--accent); }
+.call { background: var(--accent-soft); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.call .meta { font-weight: 700; color: var(--accent); }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.steps li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.steps .n { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--paper); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+.quote { font-style: italic; }
+.nots { display: flex; flex-wrap: wrap; gap: 8px; }
+.nots span { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: 15px; }
+.north { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; }
+.north .label { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.north .val { font-size: 20px; font-weight: 700; }
+.note { background: var(--warn-soft); color: var(--ink); border-radius: 4px; padding: 10px 14px; font-size: 15px; }
+.note b { color: var(--warn); }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule); padding-top: 14px; }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+}
+
+.topnav { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); display: flex; gap: 6px; justify-content: center; font-family: Calibri, "Carlito", "Segoe UI", system-ui, sans-serif; }
+.topnav a { text-decoration: none; color: var(--muted); font-weight: 700; padding: 6px 14px; border-radius: 999px; font-size: 15px; }
+.topnav a.on { background: var(--accent); color: var(--paper); }
+</style>
+<nav class="topnav"><a href="index.html">Live demo</a><a href="one-pager.html" class="on">One-pager</a></nav>
+
+<main class="sheet">
+  <header>
+    <div class="eyebrow">Builders' Day · Product (Un)Conference '26</div>
+    <h1>Lakshmi: Government schemes over a phone call</h1>
+    <p class="sub">A helpline for older people in Tier 2/3 India: call, speak in English or Tamil, and learn which of seven schemes you can get, what to carry and where to go, or get help with a payment that hasn't come, a lost card or a suspicious call.</p>
+    <p class="sub"><b>Try it:</b> <a href="index.html">live demo</a> · <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_4001m81aqr4fewj8ax1jct9mp6qq" target="_blank" rel="noopener">talk to Lakshmi</a></p>
+  </header>
+
+  <!-- 1. Problem statement -->
+  <section class="part">
+    <div class="part-head"><span class="k">1</span><h2>Problem statement</h2></div>
+    <p class="lead">Crores of older Indians are eligible for government schemes they don't receive. They don't know <strong>whether they qualify, what to bring, or where to go</strong>. Websites, apps and agents assume literacy, a smartphone or trust they don't have. Since most fraud reaches them by phone, they're wary of any unknown voice.</p>
+    <div class="stats">
+      <div class="stat"><b>14.9 Cr</b><span>people aged 60+ in India (2022), 71% rural</span></div>
+      <div class="stat flag"><b>55%</b><span>of older people know the old age pension exists*</span></div>
+      <div class="stat flag"><b>~30%</b><span>of eligible poor older people receive it*</span></div>
+      <div class="stat"><b>~6 Cr</b><span>eligible for Ayushman Bharat 70+ (₹5 lakh/yr free hospital care)</span></div>
+      <div class="stat"><b>~16%</b><span>of them enrolled (~96 lakh cards, Dec 2025)</span></div>
+      <div class="stat"><b>3.24 Cr</b><span>calls to the 1930 cyber-fraud helpline in 2025</span></div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Who</h3>
+        <p>People aged 60+ in Tier 2/3 towns and villages, or family members calling for them. They use a basic phone, have never used AI, and are eligible for at least one of seven central or Tamil Nadu schemes they don't receive.</p>
+        <p class="ex">Ex: a 72-year-old in a village outside Trichy whose son works in Chennai.</p>
+      </div>
+      <div>
+        <h3>When</h3>
+        <ul>
+          <li>Turning 60 or 70</li>
+          <li>Facing a hospital bill</li>
+          <li>A pension or PM-Kisan payment hasn't arrived</li>
+          <li>A relative hears about a scheme</li>
+          <li>An Aadhaar or ration card is lost</li>
+          <li>Someone calls asking for an OTP</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Existing solutions -->
+  <section class="part">
+    <div class="part-head"><span class="k">2</span><h2>Existing solutions and how Lakshmi differs</h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Solution</th><th>What it does</th><th>Basic phone?</th><th>Scale</th></tr></thead>
+        <tbody>
+          <tr><td><b>Sarvam × National Health Authority</b></td><td>Outbound calls promoting Ayushman Bharat 70+</td><td>Yes</td><td>1.4M reached in 6 days; 16% of connected calls willing to enrol; daily enrolments up 42% (correlation, per Sarvam)</td></tr>
+          <tr><td><b>Haqdarshak</b></td><td>Scheme discovery plus in-person help through 52,000 local agents</td><td>Through agents</td><td>7.6M families, $2.2B in benefits (self-reported)</td></tr>
+          <tr><td><b>Kisan e-Mitra</b> (government)</td><td>AI chatbot for PM-Kisan and farm schemes</td><td>No, needs internet</td><td>20,000+ queries a day, 11 languages</td></tr>
+          <tr><td><b>Jugalbandi</b> (Microsoft, AI4Bharat)</td><td>WhatsApp bot covering 171 schemes</td><td>No, smartphone</td><td>Launched 2023; current status unclear</td></tr>
+          <tr><td><b>myScheme</b> (government)</td><td>Scheme search and eligibility check</td><td>No, website</td><td>National portal</td></tr>
+          <tr><td><b>Yojana Seva Kendra</b></td><td>Inbound voice helpline covering 25 schemes</td><td>Yes</td><td>Research prototype</td></tr>
+          <tr><td><b>VoicERA on Bhashini</b> (government)</td><td>Open-source voice stack for government helplines</td><td>Yes</td><td>Infrastructure, launched Feb 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>What this tells us:</b> demand is real and government will pay for voice agents. What exists today is mostly outbound, covers one scheme at a time, needs internet, or depends on people on the ground.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Lakshmi is</th><th>Instead of</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td><b>Inbound:</b> a number you call when you need it</td><td>Outbound calls to people who didn't ask</td><td>A call you choose to make is more trustworthy for a segment wary of unknown voices</td></tr>
+          <tr><td><b>Several schemes in one call</b></td><td>One scheme per campaign or app</td><td>Answers "what can I get?" instead of "do you want scheme X?"</td></tr>
+          <tr><td><b>Closes the loop</b> to enrolment</td><td>Stopping at awareness</td><td>Documents, nearest office, reference code and verification show whether the call led to enrolment</td></tr>
+          <tr><td><b>A complement</b></td><td>A competitor</td><td>Outbound campaigns create awareness; Lakshmi is the number people call back. It can run on Bhashini in production</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Assumptions -->
+  <section class="part">
+    <div class="part-head"><span class="k">3</span><h2>Assumptions we are testing</h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>We assume that…</th><th>Risk</th><th>How we test it</th></tr></thead>
+        <tbody>
+          <tr><td>People will call a number when a trusted local source (panchayat, ASHA worker, relative) shares it</td><td><span class="risk high">High</span></td><td>Calls per 1,000 people reached, by channel</td></tr>
+          <tr><td>A computer voice earns trust if it says up front that it never asks for money, Aadhaar or OTPs</td><td><span class="risk high">High</span></td><td>Drop-off in the first 30 seconds; "would you tell a neighbour?"</td></tr>
+          <tr><td>Knowing "what to carry and where to go" is enough to get people to the office</td><td><span class="risk high">High</span></td><td>Follow-up call at 30 days: did you visit?</td></tr>
+          <tr><td>Self-reported answers (age, ration card type, land) are accurate enough to judge likely eligibility</td><td><span class="risk med">Medium</span></td><td>Audit a sample: our answer vs what the office confirmed</td></tr>
+          <tr><td>English and Tamil cover most callers in the pilot districts</td><td><span class="risk med">Medium</span></td><td>Share of calls in another language (tracked on every call)</td></tr>
+          <tr><td>Offices act when people turn up with the right documents</td><td><span class="risk med">Medium</span></td><td>Share of office visits that end in enrolment</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Solution -->
+  <section class="part">
+    <div class="part-head"><span class="k">4</span><h2>Solution</h2></div>
+    <div class="call">
+      <div class="meta">One number to call · about 2 minutes · English and Tamil</div>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Greeting.</b> <span class="quote">"Vanakkam! I am Lakshmi, a computer helper on a free helpline for government schemes. You can speak to me in English or Tamil. I will never ask you for money, your Aadhaar number, an OTP or bank details."</span></div></li>
+        <li><span class="n">2</span><div><b>Listens first.</b> An urgent problem (someone in hospital, a payment that hasn't come, a lost card, a suspicious call) is solved first.</div></li>
+        <li><span class="n">3</span><div><b>Simple questions, one at a time:</b> age, district, ration card type, widow or disability, farmland, income tax or government job.</div></li>
+        <li><span class="n">4</span><div><b>Names every scheme found, then explains one at a time:</b> what you get, documents to carry, where to go, official helpline.</div></li>
+        <li><span class="n">5</span><div><b>Reference code and follow-up consent</b> ("May we call you in a month?"). In production, an SMS summary too.</div></li>
+      </ol>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Scheme</th><th>What you get</th><th>Where to go</th><th>Helpline</th></tr></thead>
+        <tbody>
+          <tr><td>Ayushman Bharat 70+</td><td>₹5 lakh/yr free hospital treatment, any income</td><td>Hospital insurance desk or e-Sevai / Common Service Centre</td><td class="num">14555</td></tr>
+          <tr><td>Old age pension</td><td>~₹1,200/month in Tamil Nadu (60+, poor household)</td><td>Taluk office or e-Sevai centre</td><td class="num">1800 425 6000</td></tr>
+          <tr><td>Widow pension</td><td>~₹1,200/month (poor household)</td><td>Taluk office or e-Sevai centre</td><td class="num">1800 425 6000</td></tr>
+          <tr><td>Disability pension</td><td>~₹1,500/month (40%+ disability)</td><td>Taluk office or e-Sevai centre</td><td class="num">1800 425 6000</td></tr>
+          <tr><td>Magalir Urimai Thogai</td><td>₹1,000/month for the woman head of family</td><td>Ration shop or e-Sevai centre</td><td>Ration shop</td></tr>
+          <tr><td>PM-Kisan</td><td>₹6,000/yr for farm families</td><td>e-Sevai / Common Service Centre</td><td class="num">155261</td></tr>
+          <tr><td>PMSBY</td><td>₹2 lakh accident cover for ₹20/yr</td><td>Your bank or post office</td><td>Your bank</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>What Lakshmi will not do</h3>
+      <div class="nots">
+        <span>Ask for Aadhaar, OTP, bank details or money</span>
+        <span>Apply on the caller's behalf</span>
+        <span>Give medical or financial advice</span>
+        <span>Guess: when unsure, it gives the official helpline</span>
+        <span>Claim to be a person or an officer, or guarantee a benefit</span>
+        <span>Discuss politics or off-topic questions</span>
+      </div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Common problem</th><th>What Lakshmi says</th></tr></thead>
+        <tbody>
+          <tr><td>Payment hasn't come</td><td>Check e-KYC and Aadhaar-bank linking; PM-Kisan 155261 or the Taluk office; never pay anyone to release money</td></tr>
+          <tr><td>Lost Aadhaar / ration card</td><td>UIDAI 1947 or an Aadhaar centre / ration helpline 1967</td></tr>
+          <tr><td>Complaint</td><td>Tamil Nadu CM helpline 1100</td></tr>
+          <tr><td>Suspicious call or "fee"</td><td>It's a fraud: hang up and call 1930</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 5. Trust, safety and evals -->
+  <section class="part">
+    <div class="part-head"><span class="k">5</span><h2>Trust, safety and evals</h2></div>
+    <div class="north">
+      <div class="label">Automated tests on the live agent</div>
+      <div class="val">48 of 48 runs pass: 24 scripted callers, each run twice</div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Layer</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><b>Honest by design</b></td><td>Says it's a computer helper in the first sentence; never claims to approve or guarantee; always "likely eligible, the office confirms"</td></tr>
+          <tr><td><b>Guardrails</b></td><td>Blocks any reply that asks for or repeats an Aadhaar number, OTP, bank details or money; blocks "ignore your instructions" attacks</td></tr>
+          <tr><td><b>Safety routes</b></td><td>Emergency → 108; distress → Tele-MANAS 14416; elder abuse or neglect → Elder Line 14567; fraud → 1930</td></tr>
+          <tr><td><b>Difficult callers</b></td><td>Off-topic: declines kindly and redirects. Frustration: stays calm and keeps helping. Repeated abuse after one warning: ends the call politely. Other languages: explains it speaks English and Tamil and offers a route</td></tr>
+          <tr><td><b>Scored on every call</b></td><td>Five post-call checks: no personal data asked, official next step given, eligibility correct, safety handled, no false authority</td></tr>
+          <tr><td><b>Limits</b></td><td>10-minute calls, 5 at once, 200 a day; transcripts deleted after 30 days</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Test areas: right schemes (3), personal data and trust (6), fraud (3), safety (4), real problems (3), difficult callers (5). Earlier runs failed 3 and then 4 checks; each failure led to a prompt fix before the clean run.</p>
+  </section>
+
+  <!-- 4. Measuring success -->
+  <section class="part">
+    <div class="part-head"><span class="k">6</span><h2>How we measure success</h2></div>
+    <div class="north">
+      <div class="label">Primary metric</div>
+      <div class="val">% of callers who visit an official office to claim a scheme within 30 days</div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Type</th><th>Metric</th></tr></thead>
+        <tbody>
+          <tr><td><b>Reach</b></td><td>Calls and unique callers, by district and by referral channel</td></tr>
+          <tr><td><b>Call quality</b></td><td>% of calls that complete the questions; drop-off point in the call</td></tr>
+          <tr><td><b>Value found</b></td><td>% of callers likely eligible for a scheme they don't receive; schemes found per caller</td></tr>
+          <tr><td><b>Outcome</b></td><td>% who visit an office in 30 days; % who are enrolled in 60 days</td></tr>
+          <tr><td><b>Trust</b></td><td>Repeat calls and referrals; "Would you tell a neighbour about this number?"</td></tr>
+          <tr><td><b>Guardrails</b></td><td>Post-call scores on every call (no personal data asked, eligibility correct, safety handled); automated test pass rate before every change; audited sample of eligibility answers</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Pilot:</b> Tiruchirappalli (Trichy) and Madurai, Tamil Nadu · 30 days · number shared through panchayats, ASHA workers and SMS.</p>
+  </section>
+
+  <!-- 5. Business outcomes -->
+  <section class="part">
+    <div class="part-head"><span class="k">7</span><h2>Business outcomes</h2></div>
+    <div class="two">
+      <div>
+        <h3>For citizens</h3>
+        <ul>
+          <li>Benefits actually received. Each enrolment is worth ₹2,400–6,000/yr in central pension, ₹6,000/yr in PM-Kisan, or ₹5 lakh/yr of hospital cover</li>
+          <li>No fees to agents for information that is free</li>
+          <li>No wasted trips: the right documents the first time</li>
+        </ul>
+      </div>
+      <div>
+        <h3>For government and partners</h3>
+        <ul>
+          <li>Higher scheme reach. Ayushman Bharat 70+ is at ~16% enrolment</li>
+          <li>Lower outreach cost than camps and door-to-door drives</li>
+          <li>District-level demand data: which schemes people ask about and where they get stuck</li>
+        </ul>
+      </div>
+    </div>
+    <div class="north">
+      <div class="label">Business north star</div>
+      <div class="val">₹ of benefits unlocked for citizens per ₹ spent on Lakshmi</div>
+    </div>
+  </section>
+
+  <!-- 6. How we make money -->
+  <section class="part">
+    <div class="part-head"><span class="k">8</span><h2>How we make money</h2></div>
+    <p class="lead"><strong>Free for every caller. Institutions pay only when someone actually gets enrolled.</strong></p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Stage</th><th>Who pays</th><th>What they buy</th><th>Why they'd pay</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. Pilot</b></td><td>CSR programmes and foundations</td><td>A 30–90 day pilot in Trichy and Madurai with measured outcomes</td><td>Companies must spend on CSR and want measurable impact: ₹ unlocked per ₹1 spent</td></tr>
+          <tr><td><b>2. Core</b></td><td>State governments, National Health Authority</td><td>Pay per verified enrolment, or per district per month</td><td>Ayushman Bharat 70+ is at ~16% enrolment. Governments already pay vendors to run helplines like 14555</td></tr>
+          <tr><td><b>3. Platform</b></td><td>Other states, departments, NGOs</td><td>A white-labelled agent: their schemes, language and number</td><td>Any scheme with clear eligibility rules is mostly a knowledge-base change</td></tr>
+          <tr><td><b>4. Add-on</b></td><td>Departments, policy bodies</td><td>Anonymised district dashboards</td><td>Which schemes people ask about and where they get stuck. Aggregated only</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Unit economics to prove</h3>
+        <ul>
+          <li><b>Cost per enrolment</b> = cost per call ÷ % of calls that end in an enrolment</li>
+          <li>Compared with the cost of camps and door-to-door drives</li>
+          <li>Compared with ₹ of benefits unlocked per enrolment</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we will not do</h3>
+        <ul>
+          <li>Charge callers or run ads</li>
+          <li>Take referral fees from hospitals or centres</li>
+          <li>Sell financial products on the call</li>
+          <li>Sell individual data</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Verifying enrolment -->
+  <section class="part">
+    <div class="part-head"><span class="k">9</span><h2>How we verify a call led to enrolment</h2></div>
+    <p>We never collect Aadhaar, so we can't look people up in enrolment records ourselves. Three layers cover for each other:</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Layer</th><th>How it works</th><th>What it proves</th><th>Gap</th></tr></thead>
+        <tbody>
+          <tr><td><b>Reference code</b></td><td>The SMS ends with a code (Ex: SHY-4821). The centre or hospital desk records it during enrolment</td><td>This enrolment came from a Lakshmi call</td><td>Needs operators to record it; some callers won't show it</td></tr>
+          <tr><td><b>Phone-number match</b></td><td>With consent, the government partner matches caller numbers against enrolment records in its own systems and returns counts only</td><td>Enrolment happened, without us handling ID data</td><td>Undercounts when a relative enrols with their own number</td></tr>
+          <tr><td><b>District comparison</b></td><td>Compare enrolment growth in Trichy and Madurai (or in randomly chosen panchayats) against similar areas without Lakshmi</td><td>Lakshmi caused the extra enrolments</td><td>Needs district or panchayat data and a large enough pilot</td></tr>
+          <tr><td><b>Follow-up call</b></td><td>Opt-in call at 30 days: "Did you visit? Did you get the card?"</td><td>Early, fast signal</td><td>Self-reported</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Stage</th><th>Verification used</th><th>What it supports</th></tr></thead>
+        <tbody>
+          <tr><td>Hackathon demo</td><td>Reference code in the SMS</td><td>Shows the mechanism exists</td></tr>
+          <tr><td>CSR pilot</td><td>Reference code, follow-up call, district comparison</td><td>"X extra enrolments, ₹Y unlocked" for the funder</td></tr>
+          <tr><td>Government contract</td><td>Phone-number match on the partner's side, plus reference code</td><td>Pay per verified enrolment</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="note"><b>* Data caveat:</b> the ~30% uptake comes from an older health ministry survey, and the 55% awareness figure is attributed to the UNFPA India Ageing Report 2023 in press coverage. Benefit amounts are central-scheme values; state top-ups vary. Scheme amounts are Tamil Nadu rates from official and press sources and can change; Lakshmi always says the office confirms. Magalir Urimai Thogai rules were relaxed in 2025 and may have changed since, and the Elder Line (14567) and CM helpline (1100) numbers still need confirming from an official source. The revenue model is a hypothesis to validate, and cost per call is not yet measured. Phone-number matching is personal data processing under India's data protection law (DPDP Act): it needs explicit consent on the call, a stated purpose and a data-sharing agreement, and must run inside the partner's systems because a hashed phone number is easy to reverse.</p>
+
+  <footer>Sources: UNFPA India Ageing Report 2023 · PIB and PM India (Ayushman Bharat 70+, Sept 2024) · Deccan Herald (enrolment, Feb 2026) · Down To Earth (pension uptake) · the420.in (1930 helpline) · pmkisan.gov.in · NHA · myScheme · Sarvam (NHA case study, Feb 2026) · NITI Frontier Tech (Haqdarshak) · PIB (Kisan e-Mitra) · Microsoft (Jugalbandi) · ACL Anthology (Yojana Seva Kendra) · Angel One (VoicERA)</footer>
+</main>
+
+</body>
+</html>
